@@ -1,0 +1,69 @@
+header,footer{
+	width: 100%;
+	height: 50px;
+	background-color: #000;
+}
+header,footer h3{
+	color: #f1f1f1;
+}
+footer{
+	position:fixed;
+	bottom: 0;
+}
+
+	.titulo{
+		margin-top: 70px;
+		text-align: center;
+	}
+	.titulo h1{
+		font-size: 2rem;
+		font-family: arial;
+		color: rgb(21, 64, 1);
+
+	}
+	.titulo hr{
+		margin-top: -5px;
+		border:solid 1px #F3C630;
+		width: 30%
+	}
+
+	.table{
+		text-align: center;
+	}
+	.table td{
+  	    max-width: 30rem;
+		vertical-align: middle;
+	}
+	.col-sm-8{
+		padding-left: 0;
+	}
+	.col-sm-4{
+		padding-right: 0;
+		padding-left: 0;
+		top:-23px;
+	}
+	section .btn-group-vertical{
+		top:0;
+		right: 0;
+	}
+	section{
+		bottom: 50px;
+	}
+	.edit{
+		font-size: 20px;
+		font-weight: bold;
+		color:#28a745;
+	}
+	.remove{
+		font-size: 20px;
+		font-weight: bold;
+		color:red;
+	}
+
+	.btn-remover-edit-item button{
+		background-color: transparent;
+		border: none;
+	}
+	section{
+		padding-bottom: 100px;
+	}
