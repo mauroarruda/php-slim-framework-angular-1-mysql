@@ -3,7 +3,7 @@
 <body>
 
 	<header>
-		<h3>Header</h3>
+		<?php include_once('nav.php'); ?>
 	</header>
 
 	<section>
@@ -13,7 +13,7 @@
 	</section>
 
 	<footer>
-		<h3>Footer</h3>
+		<?php include_once('footer.php'); ?>
 	</footer>
 
 </body>

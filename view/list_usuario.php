@@ -58,10 +58,8 @@
 				  url: 'usuarios'
 				})
 				.then(function successCallback(response){
-			
-						console.log(response);
-						
-						$scope.usuarios = response.data.usuarios;
+
+						$scope.usuarios = response.data;
 
 				  	}, 
 				  	function errorCallback(response){
@@ -71,6 +69,5 @@
 	 	}
 	 	carregarUsuarios();
 
-	 	
-});
-</script>
+	});
+	</script>

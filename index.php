@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 require 'inc/Slim-2.x/Slim/Slim.php';
 
@@ -7,22 +7,28 @@ require 'inc/Slim-2.x/Slim/Slim.php';
 $app = new \Slim\Slim();
 
 // GET route
+
 $app->get(
     '/',
     function () {
-    
-        require_once('view/home.php');   
+       require_once("view/index.php");
     }
 );
 $app->get(
     '/index',
     function () {
-    
-        require_once('view/home.php');   
+       require_once("view/index.php");
     }
 );
-
 $app->get(
+    '/list',
+    function () {
+       require_once("view/page_list.php");
+    }
+);
+//get select
+$app->get(
+
     '/usuarios',
     function(){
 
@@ -30,9 +36,7 @@ $app->get(
 
         $sql = new Sql();
 
-        $data = $sql->select(
-            "SELECT * FROM tb_usuarios ORDER BY nome_usuario LIMIT 10"
-        );
+        $data = $sql->select("SELECT * FROM tb_usuarios ORDER BY nome_usuario LIMIT 10");
 
         foreach ($data as &$produto){
             $produto['id_usuario'] = utf8_decode($produto['id_usuario']);
@@ -43,8 +47,11 @@ $app->get(
             $produto['login_usuario'] = utf8_decode($produto['login_usuario']);
         }
 
-        echo json_encode("testando",$data);
+        echo json_encode($data);
     }
 );
 
+
 $app->run();
+
+?>
