@@ -10,7 +10,7 @@
 	.color-text-white{
 		  right:0.5rem; 
 		  top: 0.5rem;
-		  color: #f1f1f1;
+		  color:#ffc107;
 		  font-size: 1.2rem;
 		  position: absolute;
 		  display: flex;

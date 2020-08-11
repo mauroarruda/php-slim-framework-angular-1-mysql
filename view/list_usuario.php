@@ -35,7 +35,7 @@
 			      </td>
 			      <td>
 					<button class="btn btn-remove-edit-item" ng-click="editUsuario(usuario)">
- 						<i class="fas fa-pen edit"></i>
+ 						<a href="edit" title=""><i class="fas fa-pen edit"></i></a>
  					</button>
 			      	<button class="btn btn-remove-edit-item" ng-click="removeUsuario(usuario)">
 			      		<i class="fas fa-trash-alt remove"></i>
@@ -68,6 +68,18 @@
 			);
 	 	}
 	 	carregarUsuarios();
+
+		$scope.removeUsuario = function(_usuario){
+	 		$http({
+	 			method:'DELETE',
+	 			url:'removeUsuario-'+_usuario.id_usuario
+	 			}).then(function(response){
+	 				carregarUsuarios();
+	 			},function(){
+	 				console.error('Deu Ruim : Não removeu');
+	 			});
+	 	}
+
 
 	});
 	</script>

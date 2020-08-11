@@ -26,6 +26,12 @@ $app->get(
        require_once("view/page_list.php");
     }
 );
+$app->get(
+    '/edit',
+    function () {
+       require_once("view/page_edit.php");
+    }
+);
 //get select
 $app->get(
 
@@ -51,6 +57,15 @@ $app->get(
     }
 );
 
+$app->delete('/removeUsuario-:id_usuario',function($id_usuario){
+    
+    require 'inc/configuration.php';
+
+    $sql = new Sql();
+    $result = $sql->query("DELETE FROM tb_usuarios WHERE id_usuario =".$id_usuario."");
+
+    echo json_encode($result);
+});
 
 $app->run();
 
