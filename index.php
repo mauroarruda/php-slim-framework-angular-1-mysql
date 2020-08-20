@@ -33,29 +33,9 @@ $app->get(
     }
 );
 //get select
-$app->get(
-
-    '/usuarios',
-    function(){
-
-        require 'inc/configuration.php';
-
-        $sql = new Sql();
-
-        $data = $sql->select("SELECT * FROM tb_usuarios ORDER BY nome_usuario LIMIT 10");
-
-        foreach ($data as &$produto){
-            $produto['id_usuario'] = utf8_decode($produto['id_usuario']);
-            $produto['nome_usuario'] = utf8_decode($produto['nome_usuario']);
-            $produto['email_usuario'] = utf8_decode($produto['email_usuario']);
-            $produto['senha_usuario'] = utf8_decode($produto['senha_usuario']);
-            $produto['cpf_usuario'] = utf8_decode($produto['cpf_usuario']);
-            $produto['login_usuario'] = utf8_decode($produto['login_usuario']);
-        }
-
-        echo json_encode($data);
-    }
-);
+$app->get('/usuarios',function(){
+        require_once("routes/listar.php");
+});
 
 $app->delete('/removeUsuario-:id_usuario',function($id_usuario){
     
@@ -66,6 +46,22 @@ $app->delete('/removeUsuario-:id_usuario',function($id_usuario){
 
     echo json_encode($result);
 });
+
+$app->post(
+    '/cadastrar',
+    function () {
+        echo 'This is a POST route';
+    }
+);
+
+// PUT route
+$app->put(
+    '/alterar',
+    function () {
+        echo 'This is a PUT route';
+    }
+);
+
 
 $app->run();
 
